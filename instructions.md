@@ -1,4 +1,6 @@
-## Instructions for MacOS
+# Instructions for MacOS
+
+## A. Installation
 
 ### 0. Open Terminal (Launchpad -> Terminal)
 
@@ -22,5 +24,9 @@ git clone https://github.com/kangaroo96/osbp_detect.git
 ```
 cd ~/Documents/osbp_detect/
 pip3 install -r requirements.txt 
-python3 gui.py
+```
+
+## B. Run Software
+```
+python3 ~/Documents/osbp_detect/gui.py
 ```
