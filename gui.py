@@ -20,7 +20,7 @@ in_fast5 = ''
 out_fast5 = ''
 root = Tk()
 root.title(api_name)
-root.geometry('235x250')
+root.geometry('300x300')
 
 
 # Helper functions
