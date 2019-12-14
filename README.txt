@@ -1,6 +1,7 @@
 # Detect single molecular translocation events from ONT bulk FAST5 files
 
 Contributors: 
+
 - Anastassia Kanavarioti (tessi.kanavarioti@gmail.com)
 - Albert Kang (swk30@cam.ac.uk) 
 
