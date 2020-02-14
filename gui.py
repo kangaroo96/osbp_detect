@@ -19,7 +19,7 @@ from run import TPS_RANGE, MIN_IrIo, STRICT_IrIo
 api_name = 'OsBp Detect v.1.1'
 in_fast5 = ''
 out_fast5 = ''
-geom_x, geom_y = 300, 400
+geom_x, geom_y = 300, 420
 root = Tk()
 root.title(api_name)
 root.geometry('{}x{}'.format(geom_x, geom_y))
