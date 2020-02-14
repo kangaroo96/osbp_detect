@@ -1,10 +1,8 @@
 # `osbp_detect`
 
-This library has been developed with the objective to detect and report translocations of Osmium-labelled oligonucleotides using Oxford Nanopore devices. 
+`osbp_detect` allows for the detection of single unassisted oligonucleotide translocation events from ONT bulk FAST5 files. 
 
-The algorithm in its current form can also be used for the detection of any small molecule traversing any nanopore.
-
-The CLI/GUI allows for the detection of single unassisted oligonucleotide translocation events from ONT bulk FAST5 files.
+While the pipeline has been developed with the objective to detect and report translocations of Osmium-labelled oligonucleotides using Oxford Nanopore devices, the algorithm in its current form can also be used for the detection of any small molecule traversing any nanopore.
 
 ## Contributors
 
