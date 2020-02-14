@@ -16,7 +16,7 @@ from run import TPS_RANGE, MIN_IrIo, STRICT_IrIo
 
 # Set up GUI & global vars
 
-api_name = 'OsBp Detect'
+api_name = 'OsBp Detect v.1.1'
 in_fast5 = ''
 out_fast5 = ''
 geom_x, geom_y = 300, 400

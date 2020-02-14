@@ -30,3 +30,10 @@ pip3 install -r requirements.txt
 ```
 python3 ~/Documents/osbp_detect/gui.py
 ```
+
+## C. Update Software
+```
+cd ~/Documents/osbp_detect/
+git pull
+pip3 install -r requirements.txt
+```
