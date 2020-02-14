@@ -5,15 +5,18 @@ from src.fast5_utils import OsBp_FAST5
 from src.signal_utils import get_signal_pA, detect_events
 
 
-duration = (4, 1000)
-min_thresh_i = 0.30
-strict_thresh_i = 0.60
+TPS_RANGE = (4, 1000)
+MIN_IrIo = 0.30
+STRICT_IrIo = 0.60
 
 
-def start_detection(file_in, channel_query):
+def start_detection(file_in, channel_query, duration=TPS_RANGE, min_thresh_i=MIN_IrIo, strict_thresh_i=STRICT_IrIo):
 	'''
 	:param file_in: String - location of FAST5
-	:param channel_query - Iter<Int>
+	:param channel_query: - Iter<Int>
+	:param duration: Tup<Int, Int>
+	:param min_thresh_i: Float
+	:param strict_thresh_i: Float
 	:return: Void
 	'''
 	with OsBp_FAST5(file_in) as g:
