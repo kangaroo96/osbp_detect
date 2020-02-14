@@ -13,7 +13,15 @@ While the pipeline has been developed with the objective to detect and report tr
 
 Let *y* be an ordered sequence of real values representing a typical time-series obtained from a Nanopore device. 
 
-We largely categorise regions of *y* into one of two states: current from an open channel, Io, where nothing is passing through the Nanopore, and the residual current when some translocation event is taking place, Ir. 
+We initially categorise regions of *y* into one of two states: current from an open channel, *Io*, where nothing is passing through the Nanopore, and the residual current when some translocation event is taking place, *Ir*. 
+
+The *Io* is first established by taking the median of the signals between a pre-defined lower and upper range of the predicted open current.
+
+Generally, the sharp transitions between the *Io* and *Ir* states permit the use of a rule-based parser to define the single translocation event of a molecule, where various thresholds can be hand-crafted to a particular application. 
+
+Our simplistic approach makes use of three conditions whose key parameters are outlined in the figure below:
+
+![single_transloc](img/osbp_detect_alg.png)
 
 ## Run GUI
 
