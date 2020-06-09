@@ -6,11 +6,12 @@ from src.signal_utils import get_signal_pA, detect_events
 
 
 TPS_RANGE = (4, 1000)
+Io_RANGE = (150, 300)
 MIN_IrIo = 0.30
 STRICT_IrIo = 0.60
 
 
-def start_detection(file_in, channel_query, duration=TPS_RANGE, min_thresh_i=MIN_IrIo, strict_thresh_i=STRICT_IrIo):
+def start_detection(file_in, channel_query, duration=TPS_RANGE, min_thresh_i=MIN_IrIo, strict_thresh_i=STRICT_IrIo, io_range=Io_RANGE):
 	'''
 	:param file_in: String - location of FAST5
 	:param channel_query: - Iter<Int>
@@ -26,7 +27,7 @@ def start_detection(file_in, channel_query, duration=TPS_RANGE, min_thresh_i=MIN
 			signal_ary = get_signal_pA(info_obj)
 			detect_out = detect_events(signal_ary, t_range=duration, min_depth_range=(0.0, min_thresh_i), strict_depth=strict_thresh_i)
 			open_pA = detect_out['open_current']
-			if open_pA != -1.0 and open_pA >= 200.0:
+			if open_pA != -1.0 and open_pA >= io_range[0] and open_pA <= io_range[1]:
 				print('# Channel {}, Sampling rate: {} Hz, Io: {} pA\n'.format(channel_no, info_obj.sampling_rate, open_pA))
 				for event_id, event_idx in enumerate(detect_out['event_idx'], start=1):
 					start, end = event_idx

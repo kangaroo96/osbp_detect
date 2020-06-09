@@ -37,12 +37,23 @@ def get_baseline(filtered_ary, lower=150, upper=400):
     :param upper: Int
     :return: Float or None
     '''
-    signal_subset = filtered_ary[(filtered_ary > lower) & (filtered_ary < upper)]
-    if len(signal_subset) == 0:
-        out_baseline = None
-    else:
-        out_baseline = np.median(signal_subset)
-    return out_baseline
+    consts = {'min_ary_mean': 50.0, 'min_ary_std': 10.0, 'min_subset_n_prop': 0.01}
+    baseline_out = None
+    
+    # Channel QC
+    if filtered_ary.mean() > consts['min_ary_mean'] and filtered_ary.std() > consts['min_ary_std']:
+        
+        # Find baseline
+        signal_subset = filtered_ary[(filtered_ary > lower) & (filtered_ary < upper)]
+        
+        # Signal range QC
+        if len(signal_subset) > len(filtered_ary) * consts['min_subset_n_prop']:
+            baseline_out = np.median(signal_subset)
+    
+    if baseline_out is None:
+        print('Failed to identify baseline Io - bad channel')
+        
+    return baseline_out
 	
 	
 def merge_consecutive_bool(lst):
